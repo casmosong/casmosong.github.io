@@ -12,11 +12,11 @@
 
     <title>
         
-          iOS中动画的类型｜undefined
+          测试｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/07/17/iOS中动画的类型/">
+    <link rel="canonical" href="http://yoursite.com/2016/07/17/测试/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -141,7 +141,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>iOS中动画的类型</h1>
+                    <h1>测试</h1>
                     
                     <span class="meta">
                          作者 SONG BO
@@ -158,7 +158,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            iOS中动画的类型
+            测试
         </span>
     </div>
 </header>
@@ -170,44 +170,8 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>&#x4E00;. &#x5B9E;&#x73B0;&#x52A8;&#x753B;&#x57FA;&#x672C;&#x6B65;&#x9AA4;<br>&#x521B;&#x5EFA;&#x52A8;&#x753B;&#x5BF9;&#x8C61;<br>&#x8BBE;&#x7F6E;&#x52A8;&#x753B;&#x5C5E;&#x6027;<br>&#x628A;&#x52A8;&#x753B;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230;&#x67D0;&#x4E2A; CALayer &#x5BF9;&#x8C61;&#x4E0A;<br>&#x9700;&#x8981;&#x505C;&#x6B62;&#x52A8;&#x753B;&#xFF1A;&#x53EF;&#x4EE5;&#x8C03;&#x7528; remove &#x65B9;&#x6CD5;&#x79FB;&#x9664;&#x52A8;&#x753B;</p>
-<p>&#x4E8C;. iOS &#x4E2D;&#x6838;&#x5FC3;&#x52A8;&#x753B;&#x79CD;&#x7C7B;</p>
-<p>##&#x57FA;&#x672C;&#x52A8;&#x753B;(CABasicAnimation)</p>
-<p>&#x5E73;&#x79FB;&#x52A8;&#x753B;</p>
-<pre><code>CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@&quot;position&quot;];
-// &#x52A8;&#x753B;&#x6301;&#x7EED;1&#x79D2;
-anim.duration = 1;
-// &#x56E0;&#x4E3A;CGPoint&#x662F;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x6240;&#x4EE5;&#x7528;NSValue&#x5305;&#x88C5;&#x6210;&#x4E00;&#x4E2A;OC&#x5BF9;
-anim.fromValue = [NSValue valueWithCGPoint:CGPointMake(50, 50)];
-anim.toValue = [NSValue valueWithCGPoint:CGPointMake(100, 100)];
-[layer addAnimation:anim forKey:@&quot;MyAnim&quot;];
-// &#x901A;&#x8FC7;MyAnim&#x53EF;&#x4EE5;&#x53D6;&#x56DE;&#x76F8;&#x5E94;&#x7684;&#x52A8;&#x753B;&#x5BF9;&#x8C61;&#xFF0C;&#x6BD4;&#x5982;&#x7528;&#x6765;&#x4E2D;&#x9014;&#x53D6;&#x6D88;&#x52A8;&#x753B;
-</code></pre><p>&#x7F29;&#x653E;&#x52A8;&#x753B;</p>
-<pre><code>CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@&quot;transform&quot;];
-// &#x6CA1;&#x6709;&#x8BBE;&#x7F6E;fromValue&#x8BF4;&#x660E;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x4F5C;&#x4E3A;&#x521D;&#x59CB;&#x503C;
-// &#x5BBD;&#x5EA6;(width)&#x53D8;&#x4E3A;&#x539F;&#x6765;&#x7684;2&#x500D;&#xFF0C;&#x9AD8;&#x5EA6;(height)&#x53D8;&#x4E3A;&#x539F;&#x6765;&#x7684;1.5&#x500D;
-anim.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(2, 1.5, 1)];
-anim.duration = 1;
-[layer addAnimation:anim forKey:nil];
-</code></pre><p>&#x65CB;&#x8F6C;&#x52A8;&#x753B;</p>
-<pre><code>CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@&quot;transform&quot;];
-// &#x8FD9;&#x91CC;&#x662F;&#x4EE5;&#x5411;&#x91CF;(1, 1, 0)&#x4E3A;&#x8F74;&#xFF0C;&#x65CB;&#x8F6C;&#x3C0;/2&#x5F27;&#x5EA6;(90&#xB0;)
-// &#x5982;&#x679C;&#x53EA;&#x662F;&#x5728;&#x624B;&#x673A;&#x5E73;&#x9762;&#x4E0A;&#x65CB;&#x8F6C;&#xFF0C;&#x5C31;&#x8BBE;&#x7F6E;&#x5411;&#x91CF;&#x4E3A;(0, 0, 1)&#xFF0C;&#x5373;Z&#x8F74;
-anim.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_2, 1, 1, 0)];
-anim.duration = 1;
-[layer addAnimation:anim forKey:nil];
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 1. &#x521B;&#x5EFA;&#x6838;&#x5FC3;&#x52A8;&#x753B;&#x7684;&#x5BF9;&#x8C61;</div><div class="line">CABasicAnimation* anim = [[CABasicAnimation alloc] init];</div><div class="line">// 2. &#x8BBE;&#x7F6E;&#x6838;&#x5FC3;&#x52A8;&#x753B;&#x7684;&#x64CD;&#x4F5C;</div><div class="line">anim.keyPath = @&quot;transform.rotation&quot;;</div><div class="line">// &#x4ECE;&#x54EA;</div><div class="line">anim.fromValue = @(100);</div><div class="line">// &#x5230;&#x54EA;</div><div class="line">anim.toValue = @(300);</div><div class="line">anim.byValue = @(M_PI_4);</div><div class="line">// &#x52A8;&#x753B;&#x5B8C;&#x6BD5;&#x4EE5;&#x540E;&#x4E0D;&#x56DE;&#x5230;&#x539F;&#x6765;&#x7684;&#x4F4D;&#x7F6E;</div><div class="line">anim.fillMode = kCAFillModeForwards;</div><div class="line">anim.removedOnCompletion = NO;</div><div class="line">// 3. &#x6DFB;&#x52A0;&#x5230;layer&#x4E0A;</div><div class="line">[self.layer addAnimation:anim forKey:nil];</div></pre></td></tr></table></figure>
-<p>##&#x5173;&#x952E;&#x5E27;&#x52A8;&#x753B;(CAKeyframeAnimation)</p>
-<p>&#x5173;&#x952E;&#x5E27;&#x52A8;&#x753B;:&#x6709;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;<br>&#x7B2C;&#x4E00;&#x79CD;&#x662F;values&#x7684;&#x5F62;&#x5F0F;,<br>&#x7B2C;&#x4E8C;&#x79CD;&#x662F;path&#x8DEF;&#x5F84;&#x7684;&#x5F62;&#x5F0F;;<br>&#x7EC4;&#x52A8;&#x753B;(CAAnimationGroup)</p>
-<p>&#x7EC4;&#x52A8;&#x753B;: CAAnimation&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x4E00;&#x7EC4;&#x52A8;&#x753B;&#x5BF9;&#x8C61;&#xFF0C;&#x5C06;CAAnimationGroup&#x5BF9;&#x8C61;&#x52A0;&#x5165;&#x5C42;&#x540E;&#xFF0C;&#x7EC4;&#x4E2D;&#x6240;&#x6709;&#x52A8;&#x753B;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5E76;&#x53D1;&#x8FD0;&#x884C;<br>&#x5C5E;&#x6027;&#x89E3;&#x6790;&#xFF1A;animations&#xFF1A;&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x4E00;&#x7EC4;&#x52A8;&#x753B;&#x5BF9;&#x8C61;&#x7684;NSArray<br>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x7EC4;&#x52A8;&#x753B;&#x5BF9;&#x8C61;&#x662F;&#x540C;&#x65F6;&#x8FD0;&#x884C;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x52A8;&#x753B;&#x5BF9;&#x8C61;&#x7684;beginTime&#x5C5E;&#x6027;&#x6765;&#x66F4;&#x6539;&#x52A8;&#x753B;&#x7684;&#x5F00;&#x59CB;&#x65F6;&#x95F4;<br>&#x8F6C;&#x573A;&#x52A8;&#x753B;(CATransition)</p>
-<p>&#x8F6C;&#x573A;&#x52A8;&#x753B;: CAAnimation&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x7528;&#x4E8E;&#x505A;&#x8F6C;&#x573A;&#x52A8;&#x753B;&#xFF0C;&#x80FD;&#x591F;&#x4E3A;&#x5C42;&#x63D0;&#x4F9B;&#x79FB;&#x51FA;&#x5C4F;&#x5E55;&#x548C;&#x79FB;&#x5165;&#x5C4F;&#x5E55;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;<br>&#x9664;&#x4E86;&#x6838;&#x5FC3;&#x52A8;&#x753B;&#x4E4B;&#x5916;&#x53E6;&#x5916;&#x8FD8;&#x6709;<br>&#x56FE;&#x7247;&#x5E27;&#x52A8;&#x753B;:&#x5177;&#x4F53;&#x5982;&#x4E0B;UIImageView&#x53EF;&#x4EE5;&#x8BA9;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x56FE;&#x7247;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x5185;&#x6309;&#x987A;&#x5E8F;&#x663E;&#x793A;</p>
-<p>&#x76F8;&#x5173;&#x5C5E;&#x6027;&#x89E3;&#x6790;:</p>
-<p>animationImages&#xFF1A;&#x8981;&#x663E;&#x793A;&#x7684;&#x56FE;&#x7247;(&#x4E00;&#x4E2A;&#x88C5;&#x7740;UIImage&#x7684;NSArray)<br>animationDuration&#xFF1A;&#x5B8C;&#x6574;&#x5730;&#x663E;&#x793A;&#x4E00;&#x6B21;animationImages&#x4E2D;&#x7684;&#x6240;&#x6709;&#x56FE;&#x7247;&#x6240;&#x9700;&#x7684;&#x65F6;&#x95F4;<br>animationRepeatCount&#xFF1A;&#x52A8;&#x753B;&#x7684;&#x6267;&#x884C;&#x6B21;&#x6570;(&#x9ED8;&#x8BA4;&#x4E3A;0&#xFF0C;&#x4EE3;&#x8868;&#x65E0;&#x9650;&#x5FAA;&#x73AF;)&#x76F8;&#x5173;&#x65B9;&#x6CD5;&#x89E3;&#x6790;:<br>// &#x52A8;&#x753B;&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;</p>
-<ul>
-<li>(void)startAnimating; &#x5F00;&#x59CB;&#x52A8;&#x753B;</li>
-<li>(void)stopAnimating;  &#x505C;&#x6B62;&#x52A8;&#x753B;</li>
-<li>(BOOL)isAnimating;  &#x662F;&#x5426;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x52A8;&#x753B;</li>
-</ul>
+                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">&quot;canvas&quot;</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> context = canvas.getContext(<span class="string">&quot;2d&quot;</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">//</div><div class="line">//  AppDelegate.m</div><div class="line">//  TouchIdAuthentication</div><div class="line">//</div><div class="line">//  Created by KH1386 on 6/12/14.</div><div class="line">//  Copyright (c) 2014 KH1386. All rights reserved.</div><div class="line">//</div><div class="line"></div><div class="line">#import &quot;AppDelegate.h&quot;</div><div class="line"></div><div class="line">@interface AppDelegate ()</div><div class="line">            </div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@implementation AppDelegate</div><div class="line">            </div><div class="line"></div><div class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {</div><div class="line">    // Override point for customization after application launch.</div><div class="line">    return YES;</div><div class="line">}</div><div class="line"></div><div class="line">- (void)applicationWillResignActive:(UIApplication *)application {</div><div class="line">    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.</div><div class="line">    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.</div><div class="line">}</div><div class="line"></div><div class="line">- (void)applicationDidEnterBackground:(UIApplication *)application {</div><div class="line">    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.</div><div class="line">    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.</div><div class="line">}</div><div class="line"></div><div class="line">- (void)applicationWillEnterForeground:(UIApplication *)application {</div><div class="line">    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.</div><div class="line">}</div><div class="line"></div><div class="line">- (void)applicationDidBecomeActive:(UIApplication *)application {</div><div class="line">    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.</div><div class="line">}</div><div class="line"></div><div class="line">- (void)applicationWillTerminate:(UIApplication *)application {</div><div class="line">    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.</div><div class="line">}</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
 
 
                 <hr>
@@ -217,12 +181,12 @@ anim.duration = 1;
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2016/07/17/测试/" data-toggle="tooltip" data-placement="top" title="测试">&larr; Previous Post</a>
+                            <a href="/2016/07/18/runtime/" data-toggle="tooltip" data-placement="top" title="runtime">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2016/07/16/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello World">Next Post &rarr;</a>
+                            <a href="/2016/07/17/iOS中动画的类型/" data-toggle="tooltip" data-placement="top" title="iOS中动画的类型">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
