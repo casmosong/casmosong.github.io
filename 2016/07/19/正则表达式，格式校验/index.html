@@ -12,11 +12,11 @@
 
     <title>
         
-          iOS Crash文件的解析｜undefined
+          正则表达式，格式校验｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/07/19/iOS-Crash文件的解析/">
+    <link rel="canonical" href="http://yoursite.com/2016/07/19/正则表达式，格式校验/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -141,7 +141,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>iOS Crash文件的解析</h1>
+                    <h1>正则表达式，格式校验</h1>
                     
                     <span class="meta">
                          作者 SONG BO
@@ -158,7 +158,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            iOS Crash文件的解析
+            正则表达式，格式校验
         </span>
     </div>
 </header>
@@ -170,8 +170,17 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p><a href="http://www.cnblogs.com/smileEvday/p/Crash1.html" target="_blank" rel="external">iOS Crash&#x6587;&#x4EF6;&#x7684;&#x89E3;&#x6790;&#xFF08;&#x4E00;&#xFF09;</a></p>
+                <p>/<em>&#x65B9;&#x6CD5;&#x8C03;&#x7528;</em>/</p>
+<pre><code> carNumString = plCell.carTextField.text;
 
+if ([self isValidateCarNo:carNumString] == NO) {
+
+    [(SRNavigationController*)self.navigationController showAlertWithMessage:@&quot;&#x8F66;&#x724C;&#x53F7;&#x683C;&#x5F0F;&#x9519;&#x8BEF;&quot;];
+    return;
+
+}
+</code></pre><p>/<em>&#x8F66;&#x724C;&#x53F7;&#x9A8C;&#x8BC1; MODIFIED BY HELENSONG</em>/</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (BOOL)isValidateCarNo:(NSString*)carNo</div><div class="line">{</div><div class="line">    NSString *carRegex = @&quot;^[\u4e00-\u9fa5]{1}[A-Z]{1}[A-Z_0-9]{5}$&quot;;</div><div class="line">    NSPredicate *carTest = [NSPredicate predicateWithFormat:@&quot;SELF MATCHES %@&quot;, carRegex];</div><div class="line">    NSLog(@&quot;carTest is %@&quot;, carTest);</div><div class="line">    return [carTest evaluateWithObject:carNo];</div><div class="line">}</div></pre></td></tr></table></figure>
 
                 <hr>
 
@@ -180,12 +189,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2016/07/19/正则表达式，格式校验/" data-toggle="tooltip" data-placement="top" title="正则表达式，格式校验">&larr; Previous Post</a>
+                            <a href="/2016/07/19/NSString-创建-长度-取字符-是否以某字符串开头-结尾-查找指定字符串的范围-截取-拼接-替换-比较-替换-数值转换-大小写转换/" data-toggle="tooltip" data-placement="top" title="NSString:创建,长度,取字符,是否以某字符串开头,结尾, 查找指定字符串的范围,截取,拼接,替换,比较,替换,数值转换,大小写转换">&larr; Previous Post</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2016/07/18/runtime/" data-toggle="tooltip" data-placement="top" title="runtime">Next Post &rarr;</a>
+                            <a href="/2016/07/19/iOS-Crash文件的解析/" data-toggle="tooltip" data-placement="top" title="iOS Crash文件的解析">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
