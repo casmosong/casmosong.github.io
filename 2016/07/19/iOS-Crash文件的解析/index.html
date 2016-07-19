@@ -12,11 +12,11 @@
 
     <title>
         
-          runtime｜undefined
+          iOS Crash文件的解析｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2016/07/18/runtime/">
+    <link rel="canonical" href="http://yoursite.com/2016/07/19/iOS-Crash文件的解析/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -141,12 +141,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>runtime</h1>
+                    <h1>iOS Crash文件的解析</h1>
                     
                     <span class="meta">
                          作者 SONG BO
                          <span>
-                          日期 2016-07-18
+                          日期 2016-07-19
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -158,7 +158,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            runtime
+            iOS Crash文件的解析
         </span>
     </div>
 </header>
@@ -170,107 +170,7 @@
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
 
-                <p>&#x300B;runtime&#x5B9E;&#x73B0;&#x7684;&#x673A;&#x5236;&#x662F;&#x4EC0;&#x4E48;,&#x600E;&#x4E48;&#x7528;&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x5E72;&#x561B;&#xFF1F;</p>
-<p>&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x6211;&#x5C31;&#x4E0D;&#x8DDF;&#x5927;&#x5BB6;&#x7ED5;&#x5F2F;&#x5B50;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;&#x544A;&#x8BC9;&#x5927;&#x5BB6;&#xFF0C;</p>
-<p>runtime&#x662F;&#x4E00;&#x5957;&#x6BD4;&#x8F83;&#x5E95;&#x5C42;&#x7684;&#x7EAF;C&#x8BED;&#x8A00;API, &#x5C5E;&#x4E8E;1&#x4E2A;C&#x8BED;&#x8A00;&#x5E93;, &#x5305;&#x542B;&#x4E86;&#x5F88;&#x591A;&#x5E95;&#x5C42;&#x7684;C&#x8BED;&#x8A00;API&#x3002;</p>
-<p>&#x5728;&#x6211;&#x4EEC;&#x5E73;&#x65F6;&#x7F16;&#x5199;&#x7684;OC&#x4EE3;&#x7801;&#x4E2D;, &#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x65F6;, &#x5176;&#x5B9E;&#x6700;&#x7EC8;&#x90FD;&#x662F;&#x8F6C;&#x6210;&#x4E86;runtime&#x7684;C&#x8BED;&#x8A00;&#x4EE3;&#x7801;, runtime&#x7B97;&#x662F;OC&#x7684;&#x5E55;&#x540E;&#x5DE5;&#x4F5C;&#x8005;</p>
-<p>&#x6BD4;&#x5982;&#x8BF4;&#xFF0C;&#x4E0B;&#x9762;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;</p>
-<p>&#x4E3E;&#x4F8B;:</p>
-<p>OC :</p>
-<p>[[MJPerson alloc] init]</p>
-<p>runtime :</p>
-<p>objc_msgSend(objc_msgSend(&#x201C;MJPerson&#x201D; , &#x201C;alloc&#x201D;), &#x201C;init&#x201D;)</p>
-<p>&#x7B2C;&#x4E8C;&#x4E2A;&#x95EE;&#x9898;</p>
-<p>runtime &#x7528;&#x6765;&#x5E72;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#xFF1F;&#x7528;&#x5728;&#x90A3;&#x4E9B;&#x5730;&#x65B9;&#x5462;&#xFF1F;&#x600E;&#x4E48;&#x7528;&#x5462;&#xFF1F;</p>
-<p>runtime&#x662F;&#x5C5E;&#x4E8E;OC&#x7684;&#x5E95;&#x5C42;, &#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x975E;&#x5E38;&#x5E95;&#x5C42;&#x7684;&#x64CD;&#x4F5C;(&#x7528;OC&#x662F;&#x65E0;&#x6CD5;&#x73B0;&#x5B9E;&#x7684;, &#x4E0D;&#x597D;&#x5B9E;&#x73B0;)</p>
-<p>&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;, &#x52A8;&#x6001;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;(&#x6BD4;&#x5982;KVO&#x7684;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;)</p>
-<p>&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;, &#x52A8;&#x6001;&#x5730;&#x4E3A;&#x67D0;&#x4E2A;&#x7C7B;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;\&#x65B9;&#x6CD5;, &#x4FEE;&#x6539;&#x5C5E;&#x6027;&#x503C;\&#x65B9;&#x6CD5;</p>
-<p>&#x904D;&#x5386;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x6210;&#x5458;&#x53D8;&#x91CF;(&#x5C5E;&#x6027;)\&#x6240;&#x6709;&#x65B9;&#x6CD5;</p>
-<p>&#x4F8B;&#x5982;&#xFF1A;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5BF9;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x5F52;&#x6863;&#x89E3;&#x6863;&#x7684;&#x65F6;&#x5019;&#x5C5E;&#x6027;&#x7279;&#x522B;&#x7684;&#x591A;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x4F1A;&#x5199;&#x5F88;&#x591A;&#x5BF9;&#x5E94;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4E86;runtime&#x5C31;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x8BBE;&#x7F6E;&#xFF01;</p>
-<p>&#x4F8B;&#x5982;&#xFF0C;PYPerson.h&#x7684;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
-<pre><code>import
-
-@interfacePYPerson : NSObject
-
-@property (nonatomic, assign) int age;
-
-@property (nonatomic, assign) int height;
-
-@property (nonatomic, copy) NSString *name;
-
-@property (nonatomic, assign) int age2;
-
-@property (nonatomic, assign) int height2;
-
-@property (nonatomic, assign) int age3;
-
-@property (nonatomic, assign) int height3;
-
-@property (nonatomic, assign) int age4;
-
-@property (nonatomic, assign) int height4;
-
-@end
-</code></pre><p>&#x800C;PYPerson.m&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x5982;&#x4E0B;</p>
-<pre><code>#import &quot;PYPerson.h&quot;
-
-import
-
-@implementation PYPerson
-
-(void)encodeWithCoder:(NSCoder)encoder
-
-{
-
-unsigned int count = 0;
-
-Ivarivars = class_copyIvarList([PYPerson class], &amp;count);
-
-for (int i = 0; i
-
-// &#x53D6;&#x51FA;i&#x4F4D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;Ivar ivar = ivars[i];// &#x67E5;&#x770B;&#x6210;&#x5458;&#x53D8;&#x91CF;constchar*name = ivar_getName(ivar);// &#x5F52;&#x6863;NSString*key = [NSStringstringWithUTF8String:name];idvalue = [selfvalueForKey:key];[encoder encodeObject:value forKey:key];
-
-}
-
-free(ivars);
-
-}
-
-(id)initWithCoder:(NSCoder *)decoder
-
-{
-
-if (self = [super init]) {
-
-unsignedintcount =0;Ivar *ivars = class_copyIvarList([PYPerson class], &amp;count);for(inti =0; i
-
-}
-
-return self;
-
-}
-
-@end
-</code></pre><p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5F52;&#x6863;&#x548C;&#x89E3;&#x6863;&#x7684;&#x6848;&#x4F8B;&#x5176;&#x5B9E;&#x662F;runtime&#x5199;&#x4E0B;&#x7684;</p>
-<p>&#x5B66;&#x4E60;&#xFF0C;runtime&#x673A;&#x5236;&#x9996;&#x5148;&#x8981;&#x4E86;&#x89E3;&#x4E0B;&#x9762;&#x51E0;&#x4E2A;&#x95EE;&#x9898;</p>
-<p>1&#x76F8;&#x5173;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x548C;&#x51FD;&#x6570;</p>
-<p>1&gt; &#x5934;&#x6587;&#x4EF6;</p>
-<p>&#x5229;&#x7528;&#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5230;runtime&#x4E2D;&#x7684;&#x5404;&#x4E2A;&#x65B9;&#x6CD5;&#xFF01;</p>
-<p>2&gt; &#x76F8;&#x5173;&#x5E94;&#x7528;</p>
-<p>NSCoding(&#x5F52;&#x6863;&#x548C;&#x89E3;&#x6863;, &#x5229;&#x7528;runtime&#x904D;&#x5386;&#x6A21;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;)</p>
-<p>&#x5B57;&#x5178; &#x2013;&gt; &#x6A21;&#x578B; (&#x5229;&#x7528;runtime&#x904D;&#x5386;&#x6A21;&#x578B;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;, &#x6839;&#x636E;&#x5C5E;&#x6027;&#x540D;&#x4ECE;&#x5B57;&#x5178;&#x4E2D;&#x53D6;&#x51FA;&#x5BF9;&#x5E94;&#x7684;&#x503C;, &#x8BBE;&#x7F6E;&#x5230;&#x6A21;&#x578B;&#x7684;&#x5C5E;&#x6027;&#x4E0A;)</p>
-<p>KVO(&#x5229;&#x7528;runtime&#x52A8;&#x6001;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x7C7B;)</p>
-<p>&#x7528;&#x4E8E;&#x5C01;&#x88C5;&#x6846;&#x67B6;(&#x60F3;&#x600E;&#x4E48;&#x6539;&#x5C31;&#x600E;&#x4E48;&#x6539;)</p>
-<p>&#x8FD9;&#x5C31;&#x662F;&#x6211;&#x4EEC;runtime&#x673A;&#x5236;&#x7684;&#x53EA;&#x8981;&#x8FD0;&#x7528;&#x65B9;&#x5411;</p>
-<p>3&gt; &#x76F8;&#x5173;&#x51FD;&#x6570;</p>
-<p>objc_msgSend : &#x7ED9;&#x5BF9;&#x8C61;&#x53D1;&#x9001;&#x6D88;&#x606F;</p>
-<p>class_copyMethodList : &#x904D;&#x5386;&#x67D0;&#x4E2A;&#x7C7B;&#x6240;&#x6709;&#x7684;&#x65B9;&#x6CD5;</p>
-<p>class_copyIvarList : &#x904D;&#x5386;&#x67D0;&#x4E2A;&#x7C7B;&#x6240;&#x6709;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;</p>
-<p>class_&#x2026;..</p>
-<p>&#x8FD9;&#x662F;&#x6211;&#x4EEC;&#x5B66;&#x4E60;runtime&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x7684;&#x51FD;&#x6570;&#xFF01;</p>
-<p>4.&#x5FC5;&#x5907;&#x5E38;&#x8BC6;</p>
-<p>1&gt; Ivar : &#x6210;&#x5458;&#x53D8;&#x91CF;</p>
-<p>2&gt; Method : &#x6210;&#x5458;&#x65B9;&#x6CD5;</p>
+                <p><a href="http://www.cnblogs.com/smileEvday/p/Crash1.html" target="_blank" rel="external">iOS Crash&#x6587;&#x4EF6;&#x7684;&#x89E3;&#x6790;&#xFF08;&#x4E00;&#xFF09;</a></p>
 
 
                 <hr>
@@ -279,13 +179,9 @@ return self;
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/07/19/iOS-Crash文件的解析/" data-toggle="tooltip" data-placement="top" title="iOS Crash文件的解析">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/07/17/测试/" data-toggle="tooltip" data-placement="top" title="测试">Next Post &rarr;</a>
+                            <a href="/2016/07/18/runtime/" data-toggle="tooltip" data-placement="top" title="runtime">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
